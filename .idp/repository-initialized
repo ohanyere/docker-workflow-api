@@ -1,0 +1,3 @@
+# Managed by the Internal Developer Platform.
+# This commit is created only after repository personalization, CI secrets, fleet registration, and catalog persistence succeed.
+initialized: true
