@@ -60,7 +60,7 @@ jobs:
     if: needs.repository-initialized.outputs.initialized == 'true'
     uses: ohanyere/platform-core/.github/workflows/reusable-build-sign.yaml@main
     with:
-      service_name: __SERVICE_NAME__
+      service_name: docker-workflow-api
       dockerhub_namespace: kuberpull
       image_tag: ${{ github.sha }}
       dockerfile_path: ./Dockerfile
@@ -75,7 +75,7 @@ jobs:
     if: needs.repository-initialized.outputs.initialized == 'true'
     uses: ohanyere/platform-core/.github/workflows/reusable-scan.yaml@main
     with:
-      image_ref: kuberpull/__SERVICE_NAME__:${{ github.sha }}
+      image_ref: kuberpull/docker-workflow-api:${{ github.sha }}
     secrets: inherit
 
   policy-check:
@@ -102,7 +102,7 @@ jobs:
 
       - name: Update dev image tag
         run: |
-          perl -0pi -e 's|(name:\s*kuberpull/__SERVICE_NAME__\n\s*newTag:\s*)[^\n]+|${1}'"${GITHUB_SHA}"'|' k8s/overlays/dev/kustomization.yaml
+          perl -0pi -e 's|(name:\s*kuberpull/docker-workflow-api\n\s*newTag:\s*)[^\n]+|${1}'"${GITHUB_SHA}"'|' k8s/overlays/dev/kustomization.yaml
 
       - name: Commit dev promotion
         run: |
