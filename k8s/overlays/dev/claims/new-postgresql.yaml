@@ -1,0 +1,19 @@
+apiVersion: platform.ohanyere.com/v1alpha1
+kind: PostgreSQLInstance
+metadata:
+  name: new-postgresql
+  namespace: docker-workflow-api-dev
+  labels:
+    platform.io/team: platform-engineering
+    platform.io/cost-center: cc-platform-engineering
+    platform.io/environment: dev
+    platform.io/provisioned-by: nexus-platform
+    platform.io/service: docker-workflow-api
+spec:
+  compositionRef:
+    name: postgresql.aws.platform.ohanyere.com
+  parameters:
+    region: us-east-1
+    storageGB: 20
+    instanceClass: db.t4g.micro
+    deletionPolicy: Orphan
