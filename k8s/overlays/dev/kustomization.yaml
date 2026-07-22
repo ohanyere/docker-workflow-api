@@ -16,4 +16,4 @@ patches:
   - path: quota-patch.yaml
 images:
   - name: kuberpull/docker-workflow-api
-    newTag: 28664e44a529f954709e008553088102e2fda1bd
+    newTag: 04393bdd72cf1aa918c8a9e55d61176ab30b4a64
