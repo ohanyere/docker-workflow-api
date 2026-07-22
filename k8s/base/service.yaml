@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: __SERVICE_NAME__
+  name: docker-workflow-api
   labels:
-    app.kubernetes.io/name: __SERVICE_NAME__
+    app.kubernetes.io/name: docker-workflow-api
     app.kubernetes.io/component: api
-    finops.ohanyere.io/cost-center: __COST_CENTER__
+    finops.ohanyere.io/cost-center: platform-engineering
 spec:
   type: ClusterIP
   selector:
-    app.kubernetes.io/name: __SERVICE_NAME__
+    app.kubernetes.io/name: docker-workflow-api
   ports:
     - name: http
       port: 80
