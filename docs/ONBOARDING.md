@@ -11,11 +11,11 @@
 
 ## Required Metadata
 
-- `__SERVICE_NAME__`
-- `__TEAM_NAME__`
-- `__OWNER_EMAIL__`
-- `__ENVIRONMENT__`
-- `__COST_CENTER__`
+- `docker-workflow-api`
+- `Platform Engineering`
+- `mooref068@gmail.com`
+- `dev`
+- `platform-engineering`
 
 ## Platform Standards
 
