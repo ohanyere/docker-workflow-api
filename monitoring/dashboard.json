@@ -1,6 +1,6 @@
 {
-  "title": "__SERVICE_NAME__",
-  "tags": ["nodejs", "api", "__TEAM_NAME__"],
+  "title": "docker-workflow-api",
+  "tags": ["nodejs", "api", "Platform Engineering"],
   "timezone": "browser",
   "schemaVersion": 39,
   "version": 1,
@@ -12,7 +12,7 @@
       "gridPos": { "x": 0, "y": 0, "w": 6, "h": 4 },
       "targets": [
         {
-          "expr": "avg(up{job=\"__SERVICE_NAME__\"})"
+          "expr": "avg(up{job=\"docker-workflow-api\"})"
         }
       ]
     },
@@ -22,7 +22,7 @@
       "gridPos": { "x": 6, "y": 0, "w": 9, "h": 6 },
       "targets": [
         {
-          "expr": "sum(rate(http_requests_total{service=\"__SERVICE_NAME__\"}[5m]))"
+          "expr": "sum(rate(http_requests_total{service=\"docker-workflow-api\"}[5m]))"
         }
       ]
     },
@@ -32,7 +32,7 @@
       "gridPos": { "x": 0, "y": 6, "w": 9, "h": 6 },
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{pod=~\"__SERVICE_NAME__.*\"}[5m]))"
+          "expr": "sum(rate(container_cpu_usage_seconds_total{pod=~\"docker-workflow-api.*\"}[5m]))"
         }
       ]
     },
@@ -42,7 +42,7 @@
       "gridPos": { "x": 9, "y": 6, "w": 9, "h": 6 },
       "targets": [
         {
-          "expr": "sum(container_memory_working_set_bytes{pod=~\"__SERVICE_NAME__.*\"})"
+          "expr": "sum(container_memory_working_set_bytes{pod=~\"docker-workflow-api.*\"})"
         }
       ]
     }
